@@ -1,0 +1,11 @@
+SRCS=$(wildcard *.c)
+
+EXES=$(SRCS:.c=.exe)
+
+# all : *.c
+
+all : $(EXES) 
+
+
+%.exe : %.c
+	mpicxx -framework OpenCL -o $@ $<
